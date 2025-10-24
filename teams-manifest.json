@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "YOUR_APP_ID_HERE",
+  "packageName": "com.example.architecturediagrambot",
+  "developer": {
+    "name": "Your Company",
+    "websiteUrl": "https://example.com",
+    "privacyUrl": "https://example.com/privacy",
+    "termsOfUseUrl": "https://example.com/terms"
+  },
+  "name": {
+    "short": "DiagramBot",
+    "full": "Architecture Diagram Generator Bot"
+  },
+  "description": {
+    "short": "AI-powered architecture diagram generator",
+    "full": "Automatically detects technical conversations in Teams and generates editable architecture diagrams in PlantUML and Draw.io formats"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#0EA5E9",
+  "bots": [
+    {
+      "botId": "YOUR_BOT_ID_HERE",
+      "scopes": ["team", "personal", "groupchat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["team", "personal", "groupchat"],
+          "commands": [
+            {
+              "title": "status",
+              "description": "Show current detection status and technical message count"
+            },
+            {
+              "title": "generate",
+              "description": "Force diagram generation from recent messages"
+            },
+            {
+              "title": "modify",
+              "description": "Request diagram modifications using natural language"
+            },
+            {
+              "title": "help",
+              "description": "Show help message with available commands"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["*.ngrok.io", "your-domain.com"]
+}
