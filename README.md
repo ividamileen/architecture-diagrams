@@ -297,17 +297,45 @@ architecture-diagrams/
 
 ## Testing
 
-### Backend Tests
+This project includes comprehensive testing at multiple levels with >80% code coverage.
+
+### Quick Start
+
+**Backend Tests:**
 ```bash
 cd backend
-pytest
+pytest -v --cov=backend --cov-report=term-missing
 ```
 
-### Frontend Tests
+**Frontend Tests:**
 ```bash
 cd frontend
-npm test
+npm run test:coverage
 ```
+
+**Integration Tests:**
+```bash
+docker-compose up -d
+docker-compose exec backend pytest tests/test_api_endpoints.py -v -m integration
+```
+
+### Test Coverage
+
+- **Backend:** Unit tests, integration tests, service tests, model tests
+- **Frontend:** Component tests, hook tests, service tests
+- **CI/CD:** Automated testing via GitHub Actions on every push/PR
+- **Coverage Reports:** Available via Codecov and local HTML reports
+
+### Documentation
+
+For comprehensive testing documentation, see **[TESTING.md](TESTING.md)** which includes:
+- Running tests locally
+- Writing new tests
+- Test structure and organization
+- Mocking strategies
+- CI/CD pipeline details
+- Coverage reporting
+- Troubleshooting guide
 
 ## Deployment
 
